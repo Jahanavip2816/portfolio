@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>My Skills</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+
+  <style>
+    body{
+      margin:0;
+      font-family:"Montserrat", Arial, sans-serif;
+      background:#2f2f2f;
+      color:#f6ecd8;
+    }
+
+    header{
+      background:#7fbfc7;
+      padding:30px;
+      text-align:center;
+      font-family:"Oswald", sans-serif;
+      font-size:32px;
+      letter-spacing:3px;
+      color:white;
+    }
+
+    main{
+      max-width:1100px;
+      margin:0 auto;
+      padding:60px 20px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+    }
+
+    .card{
+      background:#2b2b2b;
+      padding:28px;
+      border-radius:8px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.5);
+      text-align:center;
+    }
+
+    .card h3{
+      font-family:"Oswald", sans-serif;
+      font-size:24px;
+      margin-bottom:10px;
+    }
+
+    .card p{
+      color:#c9c0ad;
+      margin-bottom:18px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:10px 20px;
+      background:#f6ecd8;
+      color:#2f2f2f;
+      border-radius:4px;
+      text-decoration:none;
+      font-weight:700;
+    }
+
+    .btn:hover{background:white}
+
+    @media(max-width:900px){
+      .cards{grid-template-columns:1fr 1fr}
+    }
+
+    @media(max-width:600px){
+      .cards{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<header>MY SKILLS & TECHNOLOGIES</header>
+
+<main>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Web Technologies</h3>
+      <p>HTML, CSS and JavaScript responsive websites.</p>
+      <a href="works.html#webtech" class="btn">See Work</a>
+    </div>
+
+    <div class="card">
+      <h3>Angular</h3>
+      <p>Single Page Applications using Angular.</p>
+      <a href="works.html#angular" class="btn">See Work</a>
+    </div>
+
+    <div class="card">
+      <h3>C#</h3>
+      <p>Console and OOP based applications.</p>
+      <a href="works.html#csharp" class="btn">See Work</a>
+    </div>
+
+    <div class="card">
+      <h3>MVC</h3>
+      <p>ASP.NET MVC web applications.</p>
+      <a href="works.html#mvc" class="btn">See Work</a>
+    </div>
+
+    <div class="card">
+      <h3>Web API</h3>
+      <p>REST APIs with authentication and CRUD.</p>
+      <a href="works.html#api" class="btn">See Work</a>
+    </div>
+
+    <div class="card">
+      <h3>Angular and WEB API</h3>
+      <p>Database design and queries.</p>
+      <a href="works.html#sql" class="btn">See Work</a>
+    </div>
+
+  </div>
+
+</main>
+
+</body>
+</html>

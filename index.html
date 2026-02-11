@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>P Jahanavi — Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="portfolio.css">
+
+  <style>
+    .top-nav {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding-left: 20px;
+    }
+
+    .logo {
+      margin: 0;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="ribbon">
+    <div class="ribbon-inner">
+      <nav class="top-nav">
+        <h1 class="logo">PORTFOLIO</h1>
+      </nav>
+    </div>
+  </header>
+
+  <div class="logo-wrap" aria-hidden="true">
+    <img src="logo.jpg" alt="logo" onerror="this.style.display='none'">
+    <div class="logo-fallback"></div>
+  </div>
+
+  <main>
+
+    <section id="about" class="page fullpage">
+      <div class="card">
+        <div class="card-inner hero-grid">
+          <div class="hero-text">
+            <small class="eyebrow">HELLO</small>&nbsp;&nbsp;&nbsp;
+
+            <h1 class="big-title">I'M <span class="accent">P JAHANAVI</span></h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+            <h3 class="subtitle">Full Stack Developer (.NET | Angular | SQL)</h3>
+
+            <p class="lead">
+              Passionate Full Stack Developer skilled in building modern web applications using 
+              Angular for frontend, .NET for backend APIs, and SQL for efficient database management. 
+              I enjoy creating clean architectures, scalable systems, and user-friendly interfaces.
+            </p>
+
+            <div class="hero-ctas">
+              <a class="btn btn-solid" href="/portfolio.html">View Work</a>
+              <a class="btn btn-outline" href="resume.pdf" download>Download Resume</a>
+            </div>
+          </div>
+
+          <figure class="hero-photo">
+            <img src="admin.jpg" alt="P Jahanavi — profile">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="page fullpage">
+      <div class="card contact-card">
+        <h2 class="card-title">Contact Me</h2>
+
+        <div class="contact-grid">
+          <form class="contact-form" action="#" method="post" onsubmit="return false;">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your e-mail address" required>
+            <input type="text" name="subject" placeholder="Subject">
+          </form>
+
+          <div class="contact-message">
+            <textarea name="message" rows="9" placeholder="Type your message here..."></textarea>
+            <button type="submit" class="btn send">SEND</button>
+          </div>
+        </div>
+
+        <div class="contact-info">
+          <ul>
+            <li><strong>Address</strong> // K.R. Palli, Chittoor, AP</li>
+            <li><strong>Telephone</strong> // (+91) 6304675510</li>
+            <li><strong>E-Mail</strong> // pjahanavi2811@gmail.com</li>
+          </ul>
+        </div>
+
+        <div class="socials">
+          <a class="social" href="https://www.linkedin.com/in/your-linkedin-id" target="_blank" title="LinkedIn">in</a>
+          <a class="social" href="https://github.com/your-github-username" target="_blank" title="GitHub">gh</a>
+          <a class="social" href="https://www.instagram.com/your-instagram-id" target="_blank" title="Instagram">ig</a>
+        </div>
+
+
+      </div>
+    </section>
+
+  </main>
+
+  <button id="scrollTop" aria-label="Scroll to top">▲</button>
+
+  <script>
+    const btn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      btn.style.display = (window.scrollY > 300) ? 'block' : 'none';
+    });
+    btn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+  </script>
+</body>
+</html>
