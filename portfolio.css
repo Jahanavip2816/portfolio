@@ -207,16 +207,64 @@ main{max-width:var(--card-w);margin:0 auto;padding:80px 20px 120px;position:rela
   border-radius:2px;
   font-weight:600
 }
-.contact-message textarea{
-  width:100%;
-  padding:12px;
-  border:2px solid rgba(255,255,255,0.03);
-  background:var(--beige);
-  color:var(--charcoal);
-  border-radius:2px;
-  resize:none;
-  font-weight:600
+/* CONTACT SECTION FIXED */
+
+.contact-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 30px;
+  align-items: start;
 }
+
+.contact-form{
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-form input,
+.contact-form textarea{
+  width: 100%;
+  padding: 16px 18px;
+  border: none;
+  background: var(--beige);
+  color: var(--charcoal);
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.contact-form textarea{
+  resize: none;
+  min-height: 180px;
+}
+
+.send{
+  width: 140px;
+  padding: 12px;
+  background: #d98b63;
+  color: #201408;
+  border-radius: 4px;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+}
+
+.contact-info{
+  margin-top: 10px;
+  color: var(--muted);
+}
+
+.contact-info ul{
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.contact-info li{
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
 .send{
   display:inline-block;
   margin-top:10px;
