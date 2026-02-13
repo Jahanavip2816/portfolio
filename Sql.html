@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SQL Server Banking Database Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #1e3a8a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        section {
+            padding: 30px;
+            margin: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #1e3a8a;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        pre {
+            background: #1f2937;
+            color: #f8f8f2;
+            padding: 15px;
+            overflow-x: auto;
+            border-radius: 6px;
+        }
+
+        .highlight {
+            background: #e0f2fe;
+            padding: 10px;
+            border-left: 5px solid #0284c7;
+            margin: 15px 0;
+        }
+
+        img {
+            width: 100%;
+            max-width: 800px;
+            margin-top: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #111827;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>SQL Server Banking Management System</h1>
+    <p>Database Design | Stored Procedures | Triggers | Transactions | Views</p>
+</header>
+
+<section>
+    <h2>1️⃣ Project Overview</h2>
+    <p>
+        Designed and implemented a real-time Banking Database System using 
+        Microsoft SQL Server. The system simulates financial operations such as 
+        deposit, withdrawal, transfer, loan tracking, and transaction auditing.
+    </p>
+</section>
+
+<section>
+    <h2>2️⃣ Database Tables</h2>
+    <ul>
+        <li>Branches</li>
+        <li>Customers</li>
+        <li>Accounts</li>
+        <li>Transactions</li>
+        <li>Loans</li>
+    </ul>
+
+    <div class="highlight">
+        ✔ Implemented Primary Keys, Foreign Keys, Constraints, and Indexes  
+        ✔ Normalized schema for data integrity  
+    </div>
+</section>
+
+<section>
+    <h2>3️⃣ Deposit Stored Procedure</h2>
+
+<pre>
+EXEC DepositMoney 
+    @AccountID = 1,
+    @Amount = 5000;
+</pre>
+
+    <p><strong>Result:</strong></p>
+    <ul>
+        <li>Account balance increases</li>
+        <li>Transaction record inserted</li>
+    </ul>
+
+    <!-- Upload your SSMS screenshot here -->
+    <img src="images/Screenshot 2026-02-13 153317.png" alt="Deposit Test Screenshot">
+</section>
+
+<section>
+    <h2>4️⃣ Withdraw Stored Procedure</h2>
+
+<pre>
+EXEC WithdrawMoney 
+    @AccountID = 1,
+    @Amount = 2000;
+</pre>
+
+    <p><strong>Validation:</strong></p>
+    <ul>
+        <li>Checks sufficient balance</li>
+        <li>Prevents overdraft</li>
+        <li>Uses TRY-CATCH with transaction handling</li>
+    </ul>
+
+    <img src="images/Screenshot 2026-02-13 153352.png" alt="Withdraw Test Screenshot">
+</section>
+
+<section>
+    <h2>5️⃣ Transfer Procedure (Transaction Safe)</h2>
+
+<pre>
+EXEC TransferMoney 
+    @FromAccount = 1,
+    @ToAccount = 2,
+    @Amount = 5000;
+</pre>
+
+    <p>
+        Uses BEGIN TRANSACTION, COMMIT, and ROLLBACK to ensure atomic financial operations.
+    </p>
+
+    <img src="images/Screenshot 2026-02-13 153453.png" alt="Transfer Test Screenshot">
+</section>
+
+<section>
+    <h2>6️⃣ Trigger: Prevent Negative Balance</h2>
+
+<pre>
+UPDATE Accounts
+SET Balance = -1000
+WHERE AccountID = 1;
+</pre>
+
+    <p><strong>Output:</strong> Insufficient Balance Error</p>
+
+    <img src="images/Screenshot 2026-02-13 153611.png" alt="Trigger Test Screenshot">
+</section>
+
+<section>
+    <h2>7️⃣ Advanced Query: Rank Customers by Balance</h2>
+
+<pre>
+SELECT 
+    FullName,
+    TotalBalance,
+    RANK() OVER (ORDER BY TotalBalance DESC) AS RankPosition
+FROM (
+    SELECT 
+        c.FullName,
+        SUM(a.Balance) AS TotalBalance
+    FROM Customers c
+    JOIN Accounts a ON c.CustomerID = a.CustomerID
+    GROUP BY c.FullName
+) AS RankedData;
+</pre>
+
+    <img src="images/Screenshot 2026-02-13 153753.png" alt="Ranking Query Screenshot">
+</section>
+
+<section>
+    <h2>8️⃣ Views Created</h2>
+    <ul>
+        <li>AccountSummary View</li>
+        <li>LoanReport View</li>
+    </ul>
+
+    <div class="highlight">
+        Used for reporting and analytics without modifying base tables.
+    </div>
+</section>
+
+<section>
+    <h2>9️⃣ Technologies Used</h2>
+    <ul>
+        <li>Microsoft SQL Server</li>
+        <li>SSMS</li>
+        <li>T-SQL</li>
+        <li>Transaction Handling</li>
+        <li>Window Functions</li>
+    </ul>
+</section>
+
+<section>
+    <h2>🔟 Key Learning Outcomes</h2>
+    <ul>
+        <li>Database normalization</li>
+        <li>Financial transaction safety</li>
+        <li>Trigger-based validation</li>
+        <li>Performance optimization with indexing</li>
+        <li>Advanced SQL analytics</li>
+    </ul>
+</section>
+</body>
+</html>
