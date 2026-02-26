@@ -383,10 +383,8 @@ main{max-width:var(--card-w);margin:0 auto;padding:80px 20px 120px;position:rela
   box-shadow: 0 8px 0 rgba(0,0,0,0.2)
 }
 
-/* muted */
 .muted{color:var(--muted);font-size:14px}
 
-/* scroll top */
 #scrollTop{
   position:fixed;
   right:24px;
