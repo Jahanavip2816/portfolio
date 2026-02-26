@@ -189,6 +189,91 @@ main{max-width:var(--card-w);margin:0 auto;padding:80px 20px 120px;position:rela
 .blog-item h4{margin:0;font-family:"Oswald",sans-serif}
 .blog-item .muted{color:var(--muted);font-size:14px}
 
+/* ==============================
+   Education / Experience / Certifications
+   ============================== */
+
+.info-block{
+  background: linear-gradient(180deg,#2f2f2f,#262626);
+  padding: 22px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  border-left: 6px solid rgba(255,255,255,0.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-block:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.6);
+}
+
+/* Section Headings inside blocks */
+.info-block h3{
+  font-family: "Oswald", sans-serif;
+  font-size: 22px;
+  margin: 0 0 8px 0;
+  color: var(--beige);
+  letter-spacing: 1px;
+}
+
+/* Paragraph text */
+.info-block p{
+  margin: 4px 0;
+  color: var(--muted);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Strong highlight (like degree/company name) */
+.info-block strong{
+  color: var(--teal);
+  font-weight: 700;
+}
+
+/* Card spacing consistency */
+#education .card,
+#experience .card,
+#certifications .card{
+  padding: 50px;
+}
+
+/* Title alignment consistent */
+#education .card-title,
+#experience .card-title,
+#certifications .card-title{
+  margin-bottom: 28px;
+}
+
+/* Optional subtle divider line */
+#education .card::after,
+#experience .card::after,
+#certifications .card::after{
+  content:"";
+  display:block;
+  width:60px;
+  height:3px;
+  background:var(--accent);
+  margin-top:30px;
+}
+/* Certification Button */
+.cert-btn{
+  margin-top: 12px;
+  display: inline-block;
+  font-size: 14px;
+}
+
+/* Experience clickable link */
+.exp-link{
+  text-decoration: none;
+  color: var(--beige);
+  transition: color 0.3s ease;
+}
+
+.exp-link:hover{
+  color: var(--accent);
+}
+
 /* contact */
 .contact-grid{
   display:grid;
